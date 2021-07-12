@@ -1,4 +1,10 @@
-import { REQUEST_CARDS, ADD_PRODUCT, REMOVE_PRODUCT } from './types';
+import {
+	REQUEST_CARDS,
+	ADD_PRODUCT,
+	REMOVE_PRODUCT,
+	TOTAL_PRODUCTS,
+    GET_TOTAL
+} from './types';
 
 export function requestCards() {
 	return {
@@ -19,3 +25,18 @@ export function removeItemFromCart(item) {
 		payload: item,
 	};
 }
+
+export function addTotalProducts(item) {
+	return {
+		type: TOTAL_PRODUCTS,
+        payload: item.reduce((prev,next) => prev + next.quantity, 0)
+	};
+}   
+
+
+export function getTotalProducts() {
+	return {
+		type: GET_TOTAL,
+        
+	};
+}   

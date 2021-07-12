@@ -13,6 +13,9 @@ import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import storage from 'redux-persist/lib/storage';
 
+
+// перенести весь store в store.js
+
 const persistConfig = {
 	key: 'root',
 	storage,
