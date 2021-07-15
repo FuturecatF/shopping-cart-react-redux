@@ -6,6 +6,7 @@
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform .6s ease;
 }
 
 .item__title {
@@ -48,4 +49,9 @@
 
 .item__button:hover {
   opacity: 0.8;
+}
+
+
+.item:hover {
+  transform: translate(0, -5px);
 }

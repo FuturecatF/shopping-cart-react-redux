@@ -1,10 +1,9 @@
-import React from 'react';
 import './Header.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { useSelector } from 'react-redux';
 
-function Header(/* { products } */) {
+function Header() {
   const products = useSelector((state) => state.cart.products);
   const totalQuantity = products.reduce(
     (prev, next) => prev + next.quantity,

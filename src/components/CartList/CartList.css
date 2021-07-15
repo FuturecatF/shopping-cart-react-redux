@@ -14,7 +14,7 @@
 }
 
 .cart-item__image {
-  flex-basis: 50%;
+  flex-basis: 40%;
   object-fit: cover;
   display: block;
   width: 100px;
@@ -26,6 +26,12 @@
   flex-basis: 30%;
   text-align: center;
   color: aliceblue;
+}
+
+.cart-item__price {
+  font-size: 25px;
+  text-align: center;
+  color: rgb(255, 255, 255);
 }
 
 .cart-item__quantity {

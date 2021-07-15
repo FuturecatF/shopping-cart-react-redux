@@ -2,45 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
-import App from './components/App';
+import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
-import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import createSagaMiddleware from '@redux-saga/core';
-import { rootReducer } from './redux/rootReducer';
-import { sagaWatcher } from './redux/sagas';
-import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import storage from 'redux-persist/lib/storage';
-
-
-// перенести весь store в store.js
-
-const persistConfig = {
-	key: 'root',
-	storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-const saga = createSagaMiddleware();
-
-const store = createStore(
-	persistedReducer,
-
-	compose(
-		applyMiddleware(saga),
-		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-	)
-);
-
-const persistor = persistStore(store);
-
-saga.run(sagaWatcher);
+import { persistor } from './redux/store';
+import { store } from './redux/store'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<BrowserRouter>
+		<BrowserRouter basename={process.env.PUBLIC_URL}>
 			<Provider store={store}>
 				<PersistGate persistor={persistor}>
 					<App />

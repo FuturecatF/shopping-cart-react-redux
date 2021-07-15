@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import { Switch, Route /* Redirect, useHistory */ } from 'react-router-dom';
-import Main from './Main/Main';
-import Cart from './Cart/Cart';
-import Header from './Header/Header';
+import { Switch, Route } from 'react-router-dom';
+import Main from '../Main/Main';
+import Cart from '../Cart/Cart';
+import Header from '../Header/Header';
 import { useDispatch, useSelector } from 'react-redux';
-import { requestCards } from '../redux/actions';
+import { requestCards } from '../../redux/actions';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Main cards={cards} />
+            <Main cards={cards} component={Main}/>
           </Route>
           <Route path="/cart">
             <Cart dispatch={dispatch} />

@@ -1,5 +1,5 @@
-import React from 'react';
 import './Cart.css';
+import React from 'react';
 import CartListFooter from '../CartListFooter/CartListFooter';
 import { useSelector } from 'react-redux';
 import CartList from '../CartList/CartList';

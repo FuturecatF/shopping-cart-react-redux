@@ -1,5 +1,5 @@
-import React from 'react';
 import './CartList.css';
+import React from 'react';
 import {
   removeItemFromCart,
   removeTotalItemFromCart,
@@ -11,6 +11,7 @@ function CartList({ item, dispatch }) {
     <li className="cart-item">
       <img className="cart-item__image" src={item.image} alt={item.name}></img>
       <h2 className="cart-item__title">{item.name}</h2>
+      <p className="cart-item__price">{item.price} &#8381;</p>
       <button
         className="cart-item__btn-count"
         onClick={() => dispatch(removeItemFromCart(item))}

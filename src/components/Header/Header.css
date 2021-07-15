@@ -30,20 +30,32 @@
 }
 
 .header__cart-total {
-  text-align: center;
-  display: block;
-  padding: 1px 2px 0 0;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: none;
   margin: auto;
   color: rgb(255, 255, 255);
-  background-color: crimson;
+  background-color: rgb(206, 7, 47);
+  width: 27px;
+  line-height: 27px;
   border-radius: 50%;
-  width: 23px;
-  height: 23px;
-  font-size: 18px;
-  position: absolute;
-  top: -7px;
-  right: -7px;
-  display: none;
+  text-align: center;
+  font-size: 20px;
+  padding-right: 1px;
+}
+
+.header__cart-total::before {
+  content: ''; /* Добавляем символ */
+  border-radius: 50%; /* Расстояние от текста до маркеров */
+  background-color: rgb(206, 7, 47);
+  border-radius: 20%;
+}
+
+.header__cart-total::after {
+  content: ''; /* Добавляем символ */
+  border-radius: 20%; /* Расстояние от текста до маркеров */
+  background-color: rgb(206, 7, 47);
 }
 
 .header__cart-total_enabled {

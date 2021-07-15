@@ -1,0 +1,11 @@
+.cartlist-footer {
+  visibility: hidden;
+  font-size: 30px;
+  flex-basis: 30%;
+  text-align: center;
+  color: aliceblue;
+}
+
+.cartlist-footer_visible {
+  visibility: visible;
+}
