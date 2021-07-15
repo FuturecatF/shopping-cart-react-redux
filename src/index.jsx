@@ -11,7 +11,7 @@ import { store } from './redux/store'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<HashRouter /* basename={process.env.PUBLIC_URL}  */>
+		<HashRouter>
 			<Provider store={store}>
 				<PersistGate persistor={persistor}>
 					<App />

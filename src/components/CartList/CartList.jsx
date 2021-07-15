@@ -1,12 +1,12 @@
 import './CartList.css';
 import React from 'react';
- /* import {
+  import {
   removeItemFromCart,
   removeTotalItemFromCart,
   addProductsToCart,
-} from '../../redux/actions'; */
+} from '../../redux/actions';
 
-function CartList({ item/* , dispatch  */}) {
+function CartList({ item, dispatch  }) {
   return (
     <li className="cart-item">
       <img className="cart-item__image" src={item.image} alt={item.name}></img>
@@ -14,20 +14,20 @@ function CartList({ item/* , dispatch  */}) {
       <p className="cart-item__price">{item.price} &#8381;</p>
       <button
         className="cart-item__btn-count"
-        /* onClick={() => dispatch(removeItemFromCart(item))} */
+         onClick={() => dispatch(removeItemFromCart(item))}
       >
         -
       </button>
       <p className="cart-item__quantity">{item.quantity}</p>
       <button
         className="cart-item__btn-count"
-        /* onClick={() => dispatch(addProductsToCart(item))} */
+         onClick={() => dispatch(addProductsToCart(item))}
       >
         +
       </button>
       <button
         className="cart-item__btn-delete"
-        /* onClick={() => dispatch(removeTotalItemFromCart(item))} */
+         onClick={() => dispatch(removeTotalItemFromCart(item))}
       >
         Удалить товар
       </button>
