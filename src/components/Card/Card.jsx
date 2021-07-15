@@ -1,10 +1,10 @@
 import './Card.css';
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { addProductsToCart } from '../../redux/actions';
+// import { useDispatch } from 'react-redux';
+// import { addProductsToCart } from '../../redux/actions';
 
 function Card({ card }) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <li className="item">
@@ -13,7 +13,7 @@ function Card({ card }) {
       <p className="item__price">Price {card.price} &#8381;</p>
       <button
         className="item__button"
-        onClick={() => dispatch(addProductsToCart(card))}
+        /* onClick={() => dispatch(addProductsToCart(card))} */
       >
         Купить
       </button>

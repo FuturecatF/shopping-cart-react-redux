@@ -45,18 +45,6 @@
   padding-right: 1px;
 }
 
-.header__cart-total::before {
-  content: ''; /* Добавляем символ */
-  border-radius: 50%; /* Расстояние от текста до маркеров */
-  background-color: rgb(206, 7, 47);
-  border-radius: 20%;
-}
-
-.header__cart-total::after {
-  content: ''; /* Добавляем символ */
-  border-radius: 20%; /* Расстояние от текста до маркеров */
-  background-color: rgb(206, 7, 47);
-}
 
 .header__cart-total_enabled {
   display: block;
