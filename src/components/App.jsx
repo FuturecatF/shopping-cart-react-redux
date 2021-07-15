@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Switch, Route, /* Redirect, useHistory */ } from 'react-router-dom';
+import { Switch, Route /* Redirect, useHistory */ } from 'react-router-dom';
 import Main from './Main/Main';
 import Cart from './Cart/Cart';
 import Header from './Header/Header';
@@ -20,14 +20,13 @@ function App() {
       <div className="page__container">
         <Header />
         <Switch>
-        <Route exact path="/">
-            <Main cards={cards}/>
+          <Route exact path="/">
+            <Main cards={cards} />
           </Route>
           <Route path="/cart">
-          <Cart />
+            <Cart dispatch={dispatch} />
           </Route>
-          </Switch>
-
+        </Switch>
       </div>
     </div>
   );

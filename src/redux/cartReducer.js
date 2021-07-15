@@ -1,59 +1,54 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT, TOTAL_PRODUCTS, GET_TOTAL } from './types';
+import { ADD_PRODUCT, REMOVE_PRODUCT, REMOVE_ITEM } from './types';
 
 const initialState = {
-	products: [],
+  products: [],
 };
 
 export const cartReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case ADD_PRODUCT:
-			const existingCartItem = state.products.find(
-				(item) => item.id === action.payload.id
-			);
+  switch (action.type) {
+    case ADD_PRODUCT:
+      const existingCartItem = state.products.find(
+        (item) => item.id === action.payload.id
+      );
 
-			if (!existingCartItem) {
-				action.payload.quantity = 1;
-                
-				return {
-					...state,
-					products: [action.payload, ...state.products ],
-				};
-			} else {
-				existingCartItem.quantity += 1;
-                
-				return {
-					...state, products: [ ...state.products ]
-				};
-			}
+      if (!existingCartItem) {
+        action.payload.quantity = 1;
 
-		case REMOVE_PRODUCT:
-			if (action.payload.quantity > 1) {
-				action.payload.quantity -= 1;
-                
-				return {
-					...state, products: [ ...state.products ]
-				};
-			} else {
-				return {
-					...state,
-					products: state.products.filter((item) => item !== action.payload),
-				};
-			}
-		case TOTAL_PRODUCTS:
-           // console.log(action.payload)
-          //  console.log(state.products)
-			return {
-                ...state,
-                total: state.products.reduce((prev,next) => prev + next.quantity, 0)
-            }
-            case GET_TOTAL: 
+        return {
+          ...state,
+          products: [action.payload, ...state.products],
+        };
+      } else {
+        existingCartItem.quantity += 1;
 
-            return {
-                ...state,
-                total: state.products
-            }
+        return {
+          ...state,
+          products: [...state.products],
+        };
+      }
 
-		default:
-			return state;
-	}
+    case REMOVE_PRODUCT:
+      if (action.payload.quantity > 1) {
+        action.payload.quantity -= 1;
+
+        return {
+          ...state,
+          products: [...state.products],
+        };
+      } else {
+        return {
+          ...state,
+          products: state.products.filter((item) => item !== action.payload),
+        };
+      }
+    case REMOVE_ITEM:
+      action.payload.quantity = 0;
+      return {
+        ...state,
+        products: state.products.filter((item) => item.quantity !== 0),
+      };
+
+    default:
+      return state;
+  }
 };

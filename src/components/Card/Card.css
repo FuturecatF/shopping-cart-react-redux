@@ -1,11 +1,11 @@
 .item {
   box-sizing: border-box;
-  box-shadow: 20px 20px 20px rgba(0, 0, 0, .5);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, .5);
-  border-left: 1px solid rgba(255, 255, 255, .5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .item__title {
@@ -44,4 +44,8 @@
   outline: 0;
   background-color: rgb(234, 248, 42);
   cursor: pointer;
+}
+
+.item__button:hover {
+  opacity: 0.8;
 }
