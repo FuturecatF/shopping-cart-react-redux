@@ -1,30 +1,36 @@
 import './App.css';
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, /* Redirect, useHistory */ } from 'react-router-dom';
 import Main from './Main/Main';
 import Cart from './Cart/Cart';
 import Header from './Header/Header';
-// import { useSelector } from 'react-redux';
-// настроить роуты
+import { useDispatch, useSelector } from 'react-redux';
+import { requestCards } from '../redux/actions';
 
 function App() {
-	/* const [total, setTotal] = React.useState(0);
-	const counterQuantity = useSelector((state) => state.cart.products);
-	if (counterQuantity.length > 0) {
-		const totad = counterQuantity.reduce((result, item) => result + item.quantity, 0);
-		 setTotal(totad);	
-	} 
-	console.log(total); */
+  const dispatch = useDispatch();
+  const cards = useSelector((state) => state.cards.fetchedCards);
 
-	return (
-		<Switch>
-			<Route exact path='/'>
-				<Header />
-				<Cart />
-				<Main />
-			</Route>
-		</Switch>
-	);
+  React.useEffect(() => {
+    dispatch(requestCards());
+  }, [dispatch]);
+
+  return (
+    <div className="page">
+      <div className="page__container">
+        <Header />
+        <Switch>
+        <Route exact path="/">
+            <Main cards={cards}/>
+          </Route>
+          <Route path="/cart">
+          <Cart />
+          </Route>
+          </Switch>
+
+      </div>
+    </div>
+  );
 }
 
 export default App;

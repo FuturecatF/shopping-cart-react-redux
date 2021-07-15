@@ -1,0 +1,47 @@
+.item {
+  box-sizing: border-box;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, .5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .1);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, .5);
+  border-left: 1px solid rgba(255, 255, 255, .5);
+}
+
+.item__title {
+  margin: 10px auto;
+  font-size: 30px;
+  color: rgb(221, 224, 17);
+  text-align: center;
+}
+
+.item__image {
+  object-fit: cover;
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+
+.item__price {
+  margin: 5px auto;
+  font-size: 26px;
+  color: rgb(221, 224, 17);
+  font-weight: 700;
+  text-align: center;
+}
+
+.item__button {
+  width: 100%;
+  height: 50px;
+  align-self: center;
+  color: rgb(0, 0, 0);
+  border: none;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: center;
+  outline: 0;
+  background-color: rgb(234, 248, 42);
+  cursor: pointer;
+}
