@@ -9,6 +9,7 @@ import { requestCards } from '../../redux/actions';
 
 function App() {
   const dispatch = useDispatch();
+
   const cards = useSelector((state) => state.cards.fetchedCards);
 
   React.useEffect(() => {
@@ -21,10 +22,10 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Main cards={cards} component={Main}/>
+            <Main cards={cards} />
           </Route>
           <Route path="/cart">
-            <Cart dispatch={dispatch} />
+            <Cart />
           </Route>
         </Switch>
       </div>

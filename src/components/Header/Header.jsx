@@ -9,6 +9,7 @@ function Header() {
     (prev, next) => prev + next.quantity,
     0
   );
+
   return (
     <header className="header">
       <div className="header__navbar">
