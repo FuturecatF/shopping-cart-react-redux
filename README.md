@@ -12,3 +12,6 @@ React, React Redux, Redux Saga
 `npm run dev` — деплой проекта на gh-pages
 
 [Ссылка на проект](https://futurecatf.github.io/shopping-cart-react-redux)
+
+# Gif Demo
+![gif demo project](http://g.recordit.co/HtuOhNiPuH.gif)
