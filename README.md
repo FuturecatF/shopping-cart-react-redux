@@ -9,7 +9,7 @@ React, React Redux, Redux Saga
 ## Запуск проекта:
 
 `npm run dev` — запускает сайт для разработки <br>
-`npm run dev` — деплой проекта на gh-pages
+`npm run deploy` — деплой проекта на gh-pages
 
 [Ссылка на проект](https://futurecatf.github.io/shopping-cart-react-redux)
 
